@@ -1,0 +1,24 @@
+// docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow — the
+// .NET tab ("Program.cs"), verbatim.
+//
+// Not built. It is a fragment, not a program:
+//   - DeleteFile is called but never defined on the page.
+//   - `builder.Services.AddChatClient(/* ... */)` elides the chat client.
+//   - Nothing connects the registered IChatClient to an AIAgent or to
+//     MapAGUIServer, so as written the gated tool never reaches an endpoint.
+//
+// The live equivalent is backend/InterruptAgent.cs, which keeps the
+// ApprovalRequiredAIFunction expression verbatim and attaches it to a
+// harness-authored, Quickstart-shaped agent instead.
+
+// Wrap the function so the framework requests approval before it runs.
+var deleteFileTool = new ApprovalRequiredAIFunction(
+    AIFunctionFactory.Create(DeleteFile, "delete_file", "Deletes a file"));
+
+builder.Services.AddChatClient(/* ... */)
+    .ConfigureOptions(options =>
+    {
+        options.Tools ??= [];
+        options.Tools.Add(deleteFileTool);
+    })
+    .UseFunctionInvocation();

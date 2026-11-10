@@ -1,0 +1,11 @@
+{
+  "name": "copilotkit-ms-agent-dotnet-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "dev:agent": "dotnet run --project backend",
+    "build": "npm --prefix frontend run build",
+    "build:agent": "dotnet build backend"
+  }
+}

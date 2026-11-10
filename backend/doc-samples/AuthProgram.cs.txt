@@ -1,0 +1,57 @@
+// docs.copilotkit.ai/ms-agent-dotnet/auth — the .NET tab, verbatim.
+//
+// Not built. This is an alternate Program.cs, and it validates JWTs against a
+// live authority and audience (the page's example is Entra ID). Standing it up
+// needs an identity provider this harness does not have, so it is kept here as
+// a doc artifact rather than merged into the server.
+//
+// The page's locally-testable shared-secret middleware exists only in its
+// Python tab, and nothing here translates it into C#.
+
+#pragma warning disable OPENAI001
+using Microsoft.Extensions.AI;
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Hosting.AGUI.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OpenAI;
+using OpenAI.Chat;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Configure JWT authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = builder.Configuration["JwtAuthority"];
+        options.Audience = builder.Configuration["JwtAudience"];
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true
+        };
+    });
+
+builder.Services.AddAuthorization();
+builder.Services.AddAGUIServer();
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+// Create and map your agent
+string openAiApiKey = builder.Configuration["OPENAI_API_KEY"]
+    ?? throw new InvalidOperationException("Set OPENAI_API_KEY");
+var openAI = new OpenAIClient(openAiApiKey);
+var agent = openAI.GetChatClient("gpt-6-luna")
+    .AsIChatClient().AsBuilder()
+    .ConfigureOptions(options => options.RawRepresentationFactory = _ =>
+        new OpenAI.Chat.ChatCompletionOptions { ReasoningEffortLevel = new("none") })
+    .Build()
+    .AsAIAgent(name: "AGUIAssistant", instructions: "You are a helpful assistant.");
+
+app.MapAGUIServer("/", agent).RequireAuthorization();
+
+await app.RunAsync();

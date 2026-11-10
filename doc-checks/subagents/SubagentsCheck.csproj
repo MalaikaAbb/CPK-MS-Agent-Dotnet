@@ -1,0 +1,28 @@
+<!--
+  Doc-check build for docs.copilotkit.ai/ms-agent-dotnet/multi-agent/subagents.
+  Compiles the page's SubagentsAgent.cs exactly as published (kept in
+  backend/doc-samples/ as .txt so the real backend never builds it), against
+  the same package pins as backend/AGUIServer.csproj. Expected to FAIL; the
+  point is to print the compiler errors. Run: dotnet build doc-checks/subagents
+  Keep the two PackageReference versions in sync with backend/AGUIServer.csproj.
+-->
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Hosting.AGUI.AspNetCore" Version="1.27.0-preview.261030.1" />
+    <PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.27.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../../backend/doc-samples/SubagentsAgent.cs.txt" Link="SubagentsAgent.cs" />
+  </ItemGroup>
+
+</Project>

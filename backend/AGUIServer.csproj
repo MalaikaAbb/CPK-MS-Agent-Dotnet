@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>738f1eae-bca7-4846-83a3-01abd1fd7bd7</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.AI.Hosting.AGUI.AspNetCore" Version="1.27.0-preview.261030.1" />
+    <PackageReference Include="Microsoft.Agents.AI.OpenAI" Version="1.27.0" />
+  </ItemGroup>
+
+
+  <!-- Doc-page C# that cannot be built. See each file's header for why. -->
+  <ItemGroup>
+    <Compile Remove="doc-samples/**" />
+    <None Include="doc-samples/**" />
+  </ItemGroup>
+
+</Project>

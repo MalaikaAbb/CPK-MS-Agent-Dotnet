@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Node
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# .NET
+bin/
+obj/
+*.user
+
+# CopilotKit CLI project metadata (contains project ids)
+.copilotkit/
+
+# Editor / OS
+.DS_Store
+*.log
+.temp_chunks/
+
+# Drift reports are derived data — regenerated on every /doc-sync run.
+# The snapshot itself (doc-snapshot/pages/, manifest.json, CHANGELOG.md)
+# IS committed; it is the baseline every diff is taken against.
+doc-snapshot/reports/

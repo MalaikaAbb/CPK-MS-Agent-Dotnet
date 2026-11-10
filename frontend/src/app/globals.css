@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  /*
+   * The harness brand colour, used by page chrome (buttons, links, badges).
+   *
+   * It is exposed under two names on purpose. `--accent` is the convenient one
+   * for page-level markup — but it is NOT safe inside a CopilotKit chat:
+   * `@copilotkit/react-core/v2` ships a shadcn token set scoped to
+   * `[data-copilotkit]`, and that set defines its own `--accent`
+   * (`oklch(97% 0 0)` — a near-white hover surface, not a brand colour). Any
+   * component rendered *inside* the chat therefore sees CopilotKit's value,
+   * not this one, and `bg-[var(--accent)] text-white` comes out white on white.
+   *
+   * `--harness-accent` is the same colour under a name CopilotKit does not
+   * shadow. In-chat components use that one. See the note in
+   * `generative-ui/tool-based/bar-chart.tsx`.
+   */
+  --harness-accent: #10b981;
+  --accent: var(--harness-accent);
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* CopilotChat fills its container, so any panel holding one needs an explicit
+   height or it collapses to nothing. */
+.chat-host {
+  height: 100%;
+  min-height: 20rem;
+}
+
+/* Shiki renders its own <pre class="shiki"> with an inline background. The
+   figure already supplies the surface and the scroll container, so strip the
+   background and match the padding/type of the unhighlighted fallback. */
+.code-figure .shiki {
+  margin: 0;
+  padding: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.625;
+  background-color: transparent !important;
+}
+
+/* Long lines should scroll with the container rather than wrap. */
+.code-figure .shiki code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+}
+
+/*
+ * In-chat surfaces
+ * ----------------
+ * Components rendered inside a CopilotChat (tool renderers, HITL cards,
+ * `useComponent` output) must not use Tailwind `dark:` variants.
+ *
+ * The two dark-mode signals disagree. Tailwind v4's default `dark` variant is
+ * `@media (prefers-color-scheme: dark)`, keyed to the OS. CopilotKit switches
+ * its own tokens on a `.dark` *class*, which nothing in this app sets. On an
+ * OS-dark machine that means `dark:bg-slate-800` fires while the chat around it
+ * is still painted light — a dark card with dark inherited text on a white
+ * surface.
+ *
+ * The fix is to theme from CopilotKit's tokens instead of from the page's:
+ * `--card`, `--card-foreground`, `--muted`, `--muted-foreground`, `--border`,
+ * `--primary`, `--primary-foreground`. Those follow whatever theme the chat is
+ * actually in, in both directions, with no variant needed.
+ */
