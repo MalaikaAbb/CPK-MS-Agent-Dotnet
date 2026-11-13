@@ -29,6 +29,30 @@ export const myCatalog = createCatalog(definitions, renderers, {
   includeBasicCatalog: true,
 });`;
 
+// "Use 1.0 with the React a2ui renderer" (added to the page 2026-11). Shown as
+// text only: @copilotkit/a2ui-renderer is not a dependency of this repo, and
+// basicCatalogV1 / DynamicStringSchemaV1 / protocolVersion need the 1.87 line.
+const RENDERER_V1_PROVIDER = `import { basicCatalogV1 } from "@copilotkit/a2ui-renderer";
+
+<CopilotKit runtimeUrl="/api/copilotkit" a2ui={{ catalog: basicCatalogV1 }}>
+  {/* Your app */}
+</CopilotKit>`;
+const RENDERER_V1_CATALOG = `import { z } from "zod";
+import {
+  createCatalog,
+  DynamicStringSchemaV1,
+} from "@copilotkit/a2ui-renderer";
+
+const myCatalog = createCatalog(
+  { Greeting: { props: z.object({ name: DynamicStringSchemaV1 }) } },
+  { Greeting: ({ props }) => <p>Hello {props.name}</p> },
+  {
+    catalogId: "acme/greetings@1",
+    protocolVersion: "1.0",
+    includeBasicCatalog: true,
+  },
+);`;
+
 export default function Page() {
   return (
     <>
@@ -69,6 +93,8 @@ export default function Page() {
           <CodeBlock code={RUNTIME_BEFORE} filename="Runtime, before" language="ts" />
           <CodeBlock code={RUNTIME_AFTER} filename="Runtime, after" language="ts" />
           <CodeBlock code={CATALOG_BEFORE} filename="Convert a custom catalog — Before" language="ts" />
+          <CodeBlock code={RENDERER_V1_PROVIDER} filename="Use 1.0 with the React a2ui renderer — basic catalog" language="tsx" />
+          <CodeBlock code={RENDERER_V1_CATALOG} filename="Use 1.0 with the React a2ui renderer — custom catalog" language="tsx" />
         </div>
       </Panel>
 
@@ -86,6 +112,16 @@ export default function Page() {
             <code>new CopilotRuntime({"{ agents }"})</code>; it is used verbatim
             in <code>/api/copilotkit-genui</code>, with a harness-authored{" "}
             <code>agents</code> map.
+          </li>
+          <li>
+            · The new &ldquo;Use 1.0 with the React a2ui renderer&rdquo;
+            snippets (<code>basicCatalogV1</code>,{" "}
+            <code>DynamicStringSchemaV1</code>,{" "}
+            <code>protocolVersion: &quot;1.0&quot;</code>) are text only:{" "}
+            <code>@copilotkit/a2ui-renderer</code> is not installed here, and
+            those exports need the 1.87 line (this repo pins 1.85). The page
+            also says the agent must emit native 1.0{" "}
+            <code>a2ui_operations</code>, which no .NET code on the page shows.
           </li>
           <li>
             · The Before side is shown only. This repo&apos;s A2UI routes are
