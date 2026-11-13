@@ -410,6 +410,16 @@ export const NAV: NavGroup[] = [
     title: "Human in the Loop",
     routes: [
       {
+        path: "/human-in-the-loop",
+        title: "HITL Overview",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/index",
+        summary:
+          "When to use interrupt-based vs tool-based human-in-the-loop, with links to both.",
+        status: "reference",
+        statusNote:
+          "Prose and two link cards only; no code to run. The two patterns are exercised on their own routes.",
+      },
+      {
         path: "/human-in-the-loop/governed-actions",
         hasDemo: true,
         title: "Governed Actions",
@@ -434,6 +444,31 @@ export const NAV: NavGroup[] = [
           "A raw AG-UI request to /interrupt_agent returns RUN_FINISHED with an interrupt outcome (reason tool_call). Not yet checked in a browser. A hand-built resume request returned RUN_ERROR, so approve/resume is unverified.",
         docGap:
           "The .NET tab is a fragment. DeleteFile is never defined, AddChatClient(/* ... */) elides the chat client, and nothing connects the gated tool to an AIAgent or MapAGUIServer. This repo adds a one-line DeleteFile and a Quickstart-shaped agent (backend/InterruptAgent.cs), both labelled. The Requirements table names AGUI.Server (.NET) 0.0.6, not the Microsoft.Agents.AI.Hosting.AGUI.AspNetCore package the Quickstart installs.",
+      },
+      {
+        path: "/human-in-the-loop/useInterrupt",
+        hasDemo: true,
+        title: "Pausing the Agent for Input",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/useInterrupt",
+        summary:
+          "useInterrupt's render receives the run's interrupt(s) with resolve/cancel; the run resumes once every interrupt is answered.",
+        status: "partial",
+        statusNote:
+          "The page's Approve/Cancel component is mounted unchanged on the existing interrupt_agent (from Interrupt-based), which emits a standard interrupt outcome. Not yet checked in a browser; resume to this agent is unverified (a hand-built resume returned RUN_ERROR). Multi-interrupt sample shown as text.",
+        docGap:
+          "The rendered .NET page replaces its frontend and backend samples with 'Not supported on MS Agent Framework (.NET)' and publishes no agent. Only the generic useInterrupt samples remain; the Approve/Cancel one has no import line. The .md export still carries a C# InterruptAgent calling a non-existent AsLunaChatClient(), hidden on the rendered page.",
+      },
+      {
+        path: "/human-in-the-loop/headless",
+        title: "Headless Interrupts",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/headless",
+        summary:
+          "Resolving an interrupt from any UI, without a chat or useInterrupt's render slot.",
+        status: "broken",
+        statusNote:
+          "Reference only. The rendered .NET page replaces its only code sample with 'Not supported on MS Agent Framework (.NET)'; nothing to build.",
+        docGap:
+          "No .NET code, agent or frontend sample is published on the rendered page. The .md export's useFrontendTool schedule_meeting excerpt (setPending, resolverRef, PickerResult undefined; no agent) is hidden on the rendered page.",
       },
       {
         path: "/human-in-the-loop/tool-based",
