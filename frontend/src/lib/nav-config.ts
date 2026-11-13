@@ -459,6 +459,18 @@ export const NAV: NavGroup[] = [
           "The rendered .NET page replaces its frontend and backend samples with 'Not supported on MS Agent Framework (.NET)' and publishes no agent. Only the generic useInterrupt samples remain; the Approve/Cancel one has no import line. The .md export still carries a C# InterruptAgent calling a non-existent AsLunaChatClient(), hidden on the rendered page.",
       },
       {
+        path: "/human-in-the-loop/headless",
+        title: "Headless Interrupts",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/headless",
+        summary:
+          "Resolving an interrupt from any UI, without a chat or useInterrupt's render slot.",
+        status: "broken",
+        statusNote:
+          "Reference only. The rendered .NET page replaces its only code sample with 'Not supported on MS Agent Framework (.NET)'; nothing to build.",
+        docGap:
+          "No .NET code, agent or frontend sample is published on the rendered page. The .md export's useFrontendTool schedule_meeting excerpt (setPending, resolverRef, PickerResult undefined; no agent) is hidden on the rendered page.",
+      },
+      {
         path: "/human-in-the-loop/tool-based",
         hasDemo: true,
         title: "Tool-based",

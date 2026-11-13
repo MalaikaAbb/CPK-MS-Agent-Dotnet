@@ -472,6 +472,10 @@ page publishes none and marks interrupts "Not supported" on .NET).
 resumes and the agent confirms the deletion, Cancel ends the run.
 *Failure:* no card (no interrupt emitted), or `RUN_ERROR` after Approve (resume is unverified on this agent).
 
+**`/human-in-the-loop/headless` — Headless Interrupts.** ❌ Reference only. The rendered page shows "Not supported
+on MS Agent Framework (.NET)" in place of its only sample, so the route summarises the pattern and links to the two
+working interrupt routes. *Success:* the page renders. There is no demo.
+
 **`/human-in-the-loop/tool-based` — Tool-based.** ⚠️ The page's `humanApprovedCommand` (`useHumanInTheLoop`) on
 the Quickstart agent; no backend change.
 *Try:* `Ask me for approval before running the command ls -la`.
@@ -613,6 +617,7 @@ this repo. Run it before trusting any status below.
 | [Governed Actions](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions) | `/human-in-the-loop/governed-actions` | ⚠️ | Approval UI works; page publishes no agent and no `executeSideEffect`. |
 | [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow) | `/human-in-the-loop/interrupt-flow` | ⚠️ | Interrupt confirmed with a raw AG-UI run; resume and browser render unverified. Labelled `DeleteFile` and agent. |
 | [Pausing the Agent for Input](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/useInterrupt) | `/human-in-the-loop/useInterrupt` | ⚠️ | Page marks .NET unsupported and publishes no agent; doc component mounted on existing `interrupt_agent`. Resume unverified. |
+| [Headless Interrupts](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/headless) | `/human-in-the-loop/headless` | ❌ | Reference only: rendered page marks .NET unsupported and publishes no code. |
 | [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based) | `/human-in-the-loop/tool-based` | ⚠️ | Complete on the page; not yet browser-checked. Code tab (dojo planner) shown as reference. |
 | [WebMCP](https://docs.copilotkit.ai/ms-agent-dotnet/webmcp) | `/webmcp` | ⚠️ | `searchOrders` is a labelled stub; WebMCP path needs Chrome 149+ with a flag. Not browser-checked. |
 | [Sub-Agents](https://docs.copilotkit.ai/ms-agent-dotnet/multi-agent/subagents) | `/multi-agent/subagents` | ❌ | Full C# now published, but two helpers are unpublished, `AsLunaChatClient()` doesn't exist, and it is on a superseded API. Demo mounts the Code-tab frontend against a Quickstart stand-in at `/subagents`: chat works, no delegations. |
@@ -1021,6 +1026,7 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [Governed Action Approval UI](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions)
 - [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow)
 - [Pausing the Agent for Input](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/useInterrupt)
+- [Headless Interrupts](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/headless)
 - [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based)
 
 **Interactivity**
