@@ -410,6 +410,16 @@ export const NAV: NavGroup[] = [
     title: "Human in the Loop",
     routes: [
       {
+        path: "/human-in-the-loop",
+        title: "HITL Overview",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/index",
+        summary:
+          "When to use interrupt-based vs tool-based human-in-the-loop, with links to both.",
+        status: "reference",
+        statusNote:
+          "Prose and two link cards only; no code to run. The two patterns are exercised on their own routes.",
+      },
+      {
         path: "/human-in-the-loop/governed-actions",
         hasDemo: true,
         title: "Governed Actions",

@@ -451,6 +451,9 @@ copy and the re-run reaches the agent and gets a reply, but the written language
 
 ### Human in the Loop
 
+**`/human-in-the-loop` — HITL Overview.** 📄 Reference. The page is prose plus two link cards (interrupt-based and
+tool-based); the route summarises it and links to both routes. *Success:* the two cards render and navigate.
+
 **`/human-in-the-loop/interrupt-flow` — Interrupt-based.** ⚠️ A backend `delete_file` wrapped in the page's
 `ApprovalRequiredAIFunction`, on a labelled Quickstart-shaped agent at `/interrupt_agent`, rendered by the page's
 `ApprovalPanel` (`useInterrupt`, `renderInChat: false`).
@@ -598,6 +601,7 @@ this repo. Run it before trusting any status below.
 | [Frontend Tools](https://docs.copilotkit.ai/ms-agent-dotnet/frontend-tools) | `/frontend-tools` | ✅ | |
 | [Reading agent state](https://docs.copilotkit.ai/ms-agent-dotnet/shared-state/in-app-agent-read) | `/shared-state/in-app-agent-read` | ⚠️ | .NET tab is a 4-line class; backed by the Quickstart agent + that class. Agent never sees state (`NO STATE`). Not browser-checked. |
 | [Writing agent state](https://docs.copilotkit.ai/ms-agent-dotnet/shared-state/in-app-agent-write) | `/shared-state/in-app-agent-write` | ⚠️ | Same agent; `setState` works client-side, writes are not read by the agent. Not browser-checked. |
+| [HITL Overview](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/index) | `/human-in-the-loop` | 📄 | Prose and links only. Its cards link to framework-neutral URLs. |
 | [Governed Actions](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions) | `/human-in-the-loop/governed-actions` | ⚠️ | Approval UI works; page publishes no agent and no `executeSideEffect`. |
 | [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow) | `/human-in-the-loop/interrupt-flow` | ⚠️ | Interrupt confirmed with a raw AG-UI run; resume and browser render unverified. Labelled `DeleteFile` and agent. |
 | [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based) | `/human-in-the-loop/tool-based` | ⚠️ | Complete on the page; not yet browser-checked. Code tab (dojo planner) shown as reference. |
@@ -999,6 +1003,7 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [Writing agent state](https://docs.copilotkit.ai/ms-agent-dotnet/shared-state/in-app-agent-write)
 
 **Human in the Loop**
+- [HITL Overview](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/index)
 - [Governed Action Approval UI](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions)
 - [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow)
 - [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based)
