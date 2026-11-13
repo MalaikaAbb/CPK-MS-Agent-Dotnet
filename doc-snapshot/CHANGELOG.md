@@ -8,6 +8,165 @@ Holds the 3 most recent dated entries. When a change lands on a fourth
 date, the oldest entry is dropped. Entries are counted, not aged, so a gap of
 weeks between changes does not expire anything.
 
+## 2026-11-13
+
+### 11:11 UTC — 9 pages, highest severity high
+
+**High — Standard catalog**
+
+`/generative-ui/components/standard-catalog` · route `/generative-ui/components/standard-catalog` · under “What is this?”
+
+42 code lines, 25 prose lines changed. The number of fenced code blocks changed.
+
+````diff
++ <Callout type="info" title="React Native">
++ The standard components render DOM, so React Native has no `standardUI` yet. Build a catalog of your own native components with `createGenerativeUI`; see [Catalogs](/generative-ui/components/catalogs) and [Generative UI with your own components](/react-native#generative-ui-with-your-own-components).
++ </Callout>
++ 
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "Vue"]} persist>
++ <Tab value="Vue">
++ ```vue
+````
+
+**High — Catalogs**
+
+`/ms-agent-dotnet/generative-ui/components/catalogs` · route `/generative-ui/components/catalogs` · under “Create a catalog”
+
+128 code lines, 43 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "React Native", "Vue"]} persist>
++ <Tab value="React Native">
++ A component of the catalog is a React Native component. It renders native views, and a slot arrives as React nodes:
++ 
++ ```tsx title="src/shopUI.tsx"
++ import { Image, StyleSheet, Text, View } from "react-native";
++ import { z } from "zod";
+````
+
+**High — Adopt from A2UI**
+
+`/ms-agent-dotnet/generative-ui/components/from-a2ui` · route `/generative-ui/components/from-a2ui` · under “Adopt from A2UI”
+
+49 code lines, 1 heading, 35 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- > Move an app from the a2ui renderer (A2UI v0.9) to components and surfaces (A2UI 1.0): the provider, the catalog, the operations, and what the agent receives.
++ > Move an app from the a2ui renderer to components and surfaces: the provider, the catalog, the operations, and what the agent receives.
+- The `a2ui` provider option and `@copilotkit/a2ui-renderer` render A2UI v0.9: you build a catalog with `createCatalog`, and the agent streams a fixed or a generated schema into it. Components and surfaces is the A2UI 1.0 engine. The idea is the same: the agent writes operations, and the browser renders your components. The engine adds typed catalogs, the [standard catalog](/generative-ui/components/standard-catalog), areas of the page as targets, two transports, dynamic values that compute in the browser, and functions the agent can call. This page maps one to the other.
++ The `a2ui` provider option and `@copilotkit/a2ui-renderer` render A2UI v0.9 by default, with explicit A2UI 1.0 support in React: you build a catalog with `createCatalog`, and the agent streams a fixed or a generated schema into it. Components and surfaces is a separate A2UI 1.0 engine. The idea is the same: the agent writes operations, and the browser renders your components. The engine adds typed catalogs, the [standard catalog](/generative-ui/components/standard-catalog), areas of the page as targets, two transports, dynamic values that compute in the browser, and functions the agent can call. This page maps one to the other.
++ ## Use 1.0 with the React a2ui renderer
++ 
++ You can keep the `a2ui` provider option and opt into the native 1.0 basic catalog:
++ 
+````
+
+**High — Markdown mode**
+
+`/ms-agent-dotnet/generative-ui/components/markdown-mode` · route `/generative-ui/components/markdown-mode` · under “What is this?”
+
+18 code lines, 14 prose lines changed. The number of fenced code blocks changed.
+
+````diff
++ <Callout type="info" title="React Native">
++ Markdown mode is not available on React Native yet. `GenerativeUIProvider` from `@copilotkit/react-native/generative-ui` uses the [tool transport](/ms-agent-dotnet/generative-ui/components/transports#tool-transport) only: `transport: "markdown"` is a type error, and passed from JavaScript it is dropped, with a warning in development.
++ </Callout>
++ 
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "Vue"]} persist>
++ <Tab value="Vue">
++ ```vue title="src/App.vue"
+````
+
+**High — State and actions**
+
+`/ms-agent-dotnet/generative-ui/components/state-and-actions` · route `/generative-ui/components/state-and-actions` · under “Show live app state”
+
+175 code lines, 52 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "React Native", "Vue"]} persist>
++ <Tab value="React Native">
++ ```tsx title="src/shopUI.tsx"
++ const cartSchema = z.object({
++ items: z.array(z.object({ productId: z.string(), quantity: z.number() })),
++ });
++ 
+````
+
+**High — Surfaces**
+
+`/ms-agent-dotnet/generative-ui/components/surfaces` · route `/generative-ui/components/surfaces` · under “What is this?”
+
+149 code lines, 59 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- - **The chat.** Always there. The agent can use every component of the catalog.
+- - **A page target.** An area of your page that you mark with `GenerativeUISurface`, or `<copilot-generative-ui-surface>` in Angular. The agent sees it only while it is on screen.
++ - **The chat.** Always there. The agent can use every component of the catalog. On React Native, you draw chat surfaces yourself, with `GenerativeUIActivity`; see [Chat surfaces on React Native](#chat-surfaces-on-react-native). The agent is offered the chat target even when the app shows no chat, so a React Native app that renders only `GenerativeUISurface` targets, or only the prebuilt `CopilotChat` (which does not draw surfaces yet), never shows a surface aimed at the chat.
++ - **A page target.** An area of your page that you mark with `GenerativeUISurface`, or `<copilot-generative-ui-surface>` in Angular. The agent sees it only while it is mounted.
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "React Native", "Vue"]} persist>
++ <Tab value="React Native">
++ ```tsx title="src/FeaturedProducts.tsx"
+````
+
+**High — Theming**
+
+`/ms-agent-dotnet/generative-ui/components/theming` · route `/generative-ui/components/theming` · under “What is this?”
+
+35 code lines, 18 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "Vue"]} persist>
++ <Tab value="Vue">
++ ```vue
++ <script setup lang="ts">
++ import { CopilotKitProvider } from "@copilotkit/vue/v2";
++ import { standardUI, type GenerativeUITheme } from "@copilotkit/vue/v2/generative-ui";
++ 
+````
+
+**High — Transports**
+
+`/ms-agent-dotnet/generative-ui/components/transports` · route `/generative-ui/components/transports` · under “What is this?”
+
+18 code lines, 29 prose lines changed. The number of fenced code blocks changed.
+
+````diff
+- The agent must send the UI to the browser somehow. Some agents are good at tool calls. Others only stream text, or you build their prompt yourself. A **transport** is the way the UI travels:
++ The agent must send the UI to the app somehow: the browser, or a React Native app. Some agents are good at tool calls. Others only stream text, or you build their prompt yourself. A **transport** is the way the UI travels:
+- Both transports use the same catalogs, surfaces, and components. Only the path between the agent and the browser changes.
++ Both transports use the same catalogs, surfaces, and components. Only the path between the agent and the app changes.
+- | Checked before the browser gets it | yes, by the runtime, and again in the browser | in the browser |
++ | Checked before the app gets it | yes, by the runtime, and again in the app | in the app |
+- <Tabs groupId="frontend_framework" items={["React", "Angular"]} persist>
++ <Tabs groupId="frontend_framework" items={["React", "Angular", "React Native", "Vue"]} persist>
+````
+
+**High — Sub-Agents**
+
+`/ms-agent-dotnet/multi-agent/subagents` · route `/multi-agent/subagents` · under “Rendering a live delegation log” · in a `typescript` block
+
+30 code lines changed.
+
+````diff
+- className="w-full h-full flex flex-col bg-white rounded-2xl shadow-sm border border-[#DBDBE5] overflow-hidden"
++ className="w-full h-full flex flex-col bg-white rounded-2xl shadow-sm border border-[#DBDBE5] overflow-hidden dark:bg-card dark:border-border"
+- <div className="flex items-center justify-between px-6 py-3 border-b border-[#E9E9EF] bg-[#FAFAFC]">
++ <div className="flex items-center justify-between px-6 py-3 border-b border-[#E9E9EF] bg-[#FAFAFC] dark:border-border dark:bg-muted">
+- <span className="text-lg font-semibold text-[#010507]">
++ <span className="text-lg font-semibold text-[#010507] dark:text-foreground">
+- className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-[#BEC2FF] bg-[#BEC2FF1A] text-[#010507] text-[10px] font-semibold uppercase tracking-[0.12em]"
++ className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border border-[#BEC2FF] bg-[#BEC2FF1A] text-[#010507] text-[10px] font-semibold uppercase tracking-[0.12em] dark:text-foreground"
+````
+
+---
+
 ## 2026-11-09
 
 ### 07:56 UTC — 19 pages, highest severity high
@@ -319,6 +478,8 @@ weeks between changes does not expire anything.
 
 ---
 
+---
+
 ## 2026-11-05
 
 ### 09:50 UTC — 27 pages, highest severity high
@@ -605,31 +766,3 @@ Now tracked for the first time.
 ---
 
 ---
-
-## 2026-09-14
-
-All 22 tracked pages under `https://docs.copilotkit.ai/ms-agent-dotnet` fetched
-and stored. No page 404'd; every response was `200 text/markdown`.
-
-Notable against the sibling `ms-agent-framework-py` snapshot taken 2026-08-26 —
-these pages are byte-identical apart from the framework slug, so their
-implementations transfer directly:
-
-- `custom-look-and-feel/slots`
-- `custom-look-and-feel/headless-ui`
-- `programmatic-control`
-- `copilot-runtime`
-- `ag-ui`
-- `prebuilt-components/copilot-threads-drawer`
-
-And these differ only in detail:
-
-- `headless-threads` — renames the project key to `CPK_INTELLIGENCE_API_KEY`
-  (Python pages call it `INTELLIGENCE_API_KEY`), moves the Intelligence doc
-  links from `/premium/` to `/intelligence/`, and adds a new section on driving
-  one agent per thread with `useAgent({ agentId, runtimeAgentId, threadId })`.
-- `threads-lifecycle` — the same key rename and link move, nothing else.
-- `custom-look-and-feel/headless-ui` — one extra sentence pointing
-  approval-gated backend tools at `useInterrupt`.
-
-The .NET-specific pages and their gaps are catalogued in README section 9.
