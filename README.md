@@ -360,6 +360,12 @@ confirmed to yield `{"searches":[…]}`, and the event stream carried no `STATE_
 *Would succeed as (on an older pin):* the list fills in when the snapshot arrives.
 *Cost note:* this wrapper runs the model twice per turn — once for the snapshot, once for the prose summary.
 
+**`/generative-ui/a2ui` — A2UI (overview).** ❌ Reference only. Shows the page's two `CopilotRuntime` variants
+(`a2ui: true` / `injectA2UITool`) and the Python `a2ui_operations` container as text. The page publishes no agent
+(`myAgent` is undefined) and declares `const runtime` twice, so nothing is mounted.
+*Success:* the page renders the two snippets and the gap callout, with links to the two approach routes.
+*Failure:* a crash on load.
+
 **`/generative-ui/a2ui/dynamic-schema` — A2UI Dynamic Schema.** ❌ Backend published in Python only. See section 9.
 
 **`/generative-ui/a2ui/fixed-schema` — A2UI Fixed Schema.** ❌ Backend published in Python only, and the schema
@@ -581,6 +587,7 @@ this repo. Run it before trusting any status below.
 | [Components as Tools](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/tool-based) | `/generative-ui/tool-based` | ✅ | C# agent published and live; `BarChart` / `barChartPropsSchema` written here from the page's description (§9.7). Chat client patched with the reasoning-effort chain; the page's bare `.AsIChatClient()` fails every tool run (§9.8). |
 | [Tool Rendering](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/tool-rendering) | `/generative-ui/tool-rendering` | ✅ | |
 | [State Rendering](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/state-rendering) | `/generative-ui/state-rendering` | ❌ | Compiles, but the 1.27 AG-UI server drops `DataContent` state (§9.9, confirmed live). |
+| [A2UI](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui) | `/generative-ui/a2ui` | ❌ | Reference only: no agent published; runtime snippet is a fragment (duplicate `const runtime`); operations example is Python. |
 | [A2UI Dynamic Schema](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/dynamic-schema) | `/generative-ui/a2ui/dynamic-schema` | ❌ | Backend is Python only; catalog undefined. |
 | [A2UI Fixed Schema](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/fixed-schema) | `/generative-ui/a2ui/fixed-schema` | ❌ | Backend is Python only; `flight_schema.json` never published. |
 | [JSON Render](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/json-render) | `/generative-ui/json-render` | ⚠️ | Frontend verbatim; doc C# fails CS0117, so a labelled one-line remedy runs. Raw AG-UI run OK; not browser-checked (§9.10). |
@@ -688,6 +695,11 @@ neither receives nor emits state. A raw run carrying `state: {"language":"spanis
 
 [Dynamic](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/dynamic-schema) ·
 [Fixed](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/fixed-schema)
+
+The A2UI overview page ([A2UI](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui)) has the same
+problem: its only backend example is a Python `a2ui_operations` dict, it names the Python `agent-framework-ag-ui`
+adapter, and its runtime snippet uses an undefined `myAgent` and declares `const runtime` twice. No agent is
+published, so `/generative-ui/a2ui` is reference only.
 
 Neither page has a `.NET` / `Python` tab pair — unlike Quickstart, Tool Rendering, Shared State, State Rendering
 and Authentication, which all do. The backend code is Python throughout: `agent_framework`,
@@ -974,6 +986,7 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [Components as Tools](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/tool-based)
 - [Tool Rendering](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/tool-rendering)
 - [State Rendering](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/state-rendering)
+- [A2UI](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui)
 - [A2UI · Dynamic Schema](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/dynamic-schema)
 - [A2UI · Fixed Schema](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/a2ui/fixed-schema)
 - [JSON Render](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/json-render)
