@@ -446,6 +446,19 @@ export const NAV: NavGroup[] = [
           "The .NET tab is a fragment. DeleteFile is never defined, AddChatClient(/* ... */) elides the chat client, and nothing connects the gated tool to an AIAgent or MapAGUIServer. This repo adds a one-line DeleteFile and a Quickstart-shaped agent (backend/InterruptAgent.cs), both labelled. The Requirements table names AGUI.Server (.NET) 0.0.6, not the Microsoft.Agents.AI.Hosting.AGUI.AspNetCore package the Quickstart installs.",
       },
       {
+        path: "/human-in-the-loop/useInterrupt",
+        hasDemo: true,
+        title: "Pausing the Agent for Input",
+        docPath: "/ms-agent-dotnet/human-in-the-loop/useInterrupt",
+        summary:
+          "useInterrupt's render receives the run's interrupt(s) with resolve/cancel; the run resumes once every interrupt is answered.",
+        status: "partial",
+        statusNote:
+          "The page's Approve/Cancel component is mounted unchanged on the existing interrupt_agent (from Interrupt-based), which emits a standard interrupt outcome. Not yet checked in a browser; resume to this agent is unverified (a hand-built resume returned RUN_ERROR). Multi-interrupt sample shown as text.",
+        docGap:
+          "The rendered .NET page replaces its frontend and backend samples with 'Not supported on MS Agent Framework (.NET)' and publishes no agent. Only the generic useInterrupt samples remain; the Approve/Cancel one has no import line. The .md export still carries a C# InterruptAgent calling a non-existent AsLunaChatClient(), hidden on the rendered page.",
+      },
+      {
         path: "/human-in-the-loop/tool-based",
         hasDemo: true,
         title: "Tool-based",

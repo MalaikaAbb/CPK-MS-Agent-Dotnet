@@ -464,6 +464,14 @@ tool-based); the route summarises it and links to both routes. *Success:* the tw
 *Known:* a raw AG-UI run does return the interrupt. A hand-built resume request returned `RUN_ERROR`, so the
 browser resume path is unverified.
 
+**`/human-in-the-loop/useInterrupt` — Pausing the Agent for Input.** ⚠️ The page's generic Approve/Cancel
+`useInterrupt` component, mounted unchanged on the existing `interrupt_agent` (the Interrupt-based route's agent; this
+page publishes none and marks interrupts "Not supported" on .NET).
+*Try:* `Delete the file notes.txt`.
+*Success:* an Approve/Cancel card with `Approval required for tool call: delete_file` appears in the chat; Approve
+resumes and the agent confirms the deletion, Cancel ends the run.
+*Failure:* no card (no interrupt emitted), or `RUN_ERROR` after Approve (resume is unverified on this agent).
+
 **`/human-in-the-loop/tool-based` — Tool-based.** ⚠️ The page's `humanApprovedCommand` (`useHumanInTheLoop`) on
 the Quickstart agent; no backend change.
 *Try:* `Ask me for approval before running the command ls -la`.
@@ -604,6 +612,7 @@ this repo. Run it before trusting any status below.
 | [HITL Overview](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/index) | `/human-in-the-loop` | 📄 | Prose and links only. Its cards link to framework-neutral URLs. |
 | [Governed Actions](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions) | `/human-in-the-loop/governed-actions` | ⚠️ | Approval UI works; page publishes no agent and no `executeSideEffect`. |
 | [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow) | `/human-in-the-loop/interrupt-flow` | ⚠️ | Interrupt confirmed with a raw AG-UI run; resume and browser render unverified. Labelled `DeleteFile` and agent. |
+| [Pausing the Agent for Input](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/useInterrupt) | `/human-in-the-loop/useInterrupt` | ⚠️ | Page marks .NET unsupported and publishes no agent; doc component mounted on existing `interrupt_agent`. Resume unverified. |
 | [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based) | `/human-in-the-loop/tool-based` | ⚠️ | Complete on the page; not yet browser-checked. Code tab (dojo planner) shown as reference. |
 | [WebMCP](https://docs.copilotkit.ai/ms-agent-dotnet/webmcp) | `/webmcp` | ⚠️ | `searchOrders` is a labelled stub; WebMCP path needs Chrome 149+ with a flag. Not browser-checked. |
 | [Sub-Agents](https://docs.copilotkit.ai/ms-agent-dotnet/multi-agent/subagents) | `/multi-agent/subagents` | ❌ | Full C# now published, but two helpers are unpublished, `AsLunaChatClient()` doesn't exist, and it is on a superseded API. Demo mounts the Code-tab frontend against a Quickstart stand-in at `/subagents`: chat works, no delegations. |
@@ -841,6 +850,11 @@ entry carrying a secret word was sent to `/genui_agent`, and the model answered 
   `@ts-expect-error` above it).
 - **Tool Rendering / Frontend Tools Code tabs:** they import v1 `CopilotKit` from `@copilotkit/react-core` next to
   v2 hooks, and the bundled README still names `useCopilotAction`.
+- **Pausing the Agent for Input / Headless Interrupts:** on the rendered ms-agent-dotnet pages the framework samples
+  are replaced by "Not supported on MS Agent Framework (.NET)". The `.md` export still carries C# (`InterruptAgent`
+  with `AsLunaChatClient()`, which does not exist) and a `useFrontendTool` `schedule_meeting` shim; the rendered pages
+  hide both, so neither is built. `/human-in-the-loop/useInterrupt` mounts only the generic Approve/Cancel sample (no
+  import line printed) on the existing `interrupt_agent`; `/human-in-the-loop/headless` is reference only.
 - **Lint:** the verbatim Code-tab routes use `@ts-ignore`, and two verbatim chart components reassign a variable
   during render. Both are flagged by `eslint` and kept as published.
 
@@ -1006,6 +1020,7 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [HITL Overview](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/index)
 - [Governed Action Approval UI](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/governed-actions)
 - [Interrupt-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/interrupt-flow)
+- [Pausing the Agent for Input](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/useInterrupt)
 - [Tool-based](https://docs.copilotkit.ai/ms-agent-dotnet/human-in-the-loop/tool-based)
 
 **Interactivity**
