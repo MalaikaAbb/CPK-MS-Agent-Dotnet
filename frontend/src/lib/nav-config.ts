@@ -239,6 +239,18 @@ export const NAV: NavGroup[] = [
           "Unpublished: the minimal demo's ./chat and ./design-skill, and the C# helpers ApiKeyResolver and AimockHeaderPolicy. Labelled stand-ins are written for all four (backend/DocGapStubs.cs). The Code tab maps the agents with MapAGUI, which no Hosting.AGUI release has; this repo uses MapAGUIServer.",
       },
       {
+        path: "/generative-ui/a2ui",
+        title: "A2UI",
+        docPath: "/ms-agent-dotnet/generative-ui/a2ui",
+        summary:
+          "Overview: turning on the runtime's A2UI middleware and choosing fixed vs dynamic schema.",
+        status: "broken",
+        statusNote:
+          "Reference only. The page publishes no agent (myAgent is undefined), its runtime snippet declares const runtime twice, and its operations example is Python.",
+        docGap:
+          "No agent of any kind is published, so there is nothing to run. The two CopilotRuntime variants are one fragment with a duplicate const. The a2ui_operations example and the adapter it names (agent-framework-ag-ui) are Python; no C# is shown.",
+      },
+      {
         path: "/generative-ui/a2ui/dynamic-schema",
         title: "A2UI · Dynamic Schema",
         docPath: "/ms-agent-dotnet/generative-ui/a2ui/dynamic-schema",
