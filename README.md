@@ -595,7 +595,7 @@ this repo. Run it before trusting any status below.
 | [Components and surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components) | `/generative-ui/components` | ❌ | TanStack BuiltInAgent swapped for MAF `components_agent`; context (guide, catalog) dropped (§9.11). |
 | [Surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/surfaces) | `/generative-ui/components/surfaces` | ❌ | Context dropped (§9.11); fallback row works offline. |
 | [Catalogs](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/catalogs) | `/generative-ui/components/catalogs` | ❌ | Context dropped; export tab works offline. |
-| [Standard catalog](https://docs.copilotkit.ai/generative-ui/components/standard-catalog) | `/generative-ui/components/standard-catalog` | ❌ | Context dropped. |
+| [Standard catalog](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/standard-catalog) | `/generative-ui/components/standard-catalog` | ❌ | Context dropped. |
 | [State and actions](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/state-and-actions) | `/generative-ui/components/state-and-actions` | ❌ | Context dropped; declarations tab works offline. |
 | [Theming](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/theming) | `/generative-ui/components/theming` | ❌ | Context dropped; nothing renders to theme. |
 | [Transports](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/transports) | `/generative-ui/components/transports` | ❌ | Context dropped. |
@@ -991,7 +991,7 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [Components and surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components)
 - [Surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/surfaces)
 - [Catalogs](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/catalogs)
-- [Standard catalog](https://docs.copilotkit.ai/generative-ui/components/standard-catalog)
+- [Standard catalog](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/standard-catalog)
 - [State and actions](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/state-and-actions)
 - [Theming](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/theming)
 - [Transports](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/transports)

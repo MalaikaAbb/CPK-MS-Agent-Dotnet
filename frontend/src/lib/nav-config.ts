@@ -304,13 +304,13 @@ export const NAV: NavGroup[] = [
         path: "/generative-ui/components/standard-catalog",
         hasDemo: true,
         title: "Standard catalog",
-        docPath: "/generative-ui/components/standard-catalog",
+        docPath: "/ms-agent-dotnet/generative-ui/components/standard-catalog",
         summary:
           "The 69-component standardUI, as is and with extends, omit and overrides.",
         status: "broken",
         statusNote:
           COMPONENTS_NOTE +
-          " This page lives outside the ms-agent-dotnet tree. maplibre-gl is not installed, so Map would fall back to a list.",
+          " maplibre-gl is not installed, so Map would fall back to a list.",
         docGap: COMPONENTS_CONTEXT_GAP,
       },
       {

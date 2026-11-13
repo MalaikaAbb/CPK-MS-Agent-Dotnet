@@ -52,10 +52,6 @@ export default function Page() {
       <Callout tone="warn" title="Harness-authored pieces and gaps">
         <ul className="space-y-1.5">
           <li>
-            · This page has no ms-agent-dotnet URL; it lives at the
-            framework-neutral <code>/generative-ui/components/standard-catalog</code>.
-          </li>
-          <li>
             · &ldquo;Add your own components&rdquo; uses <code>ProductCard</code>{" "}
             and <code>productSchema</code> without defining them — both are
             harness-authored in <code>_shared/scaffolding.tsx</code>.
