@@ -401,12 +401,17 @@ server drops (§9.11). The tool still arrives, so expect a generic UI and possib
 
 ### Generative UI · Components and surfaces
 
-All eight routes are ❌. Their doc code is verbatim, and the pieces the pages never define are harness-authored
+All nine routes are ❌. Their doc code is verbatim, and the pieces the pages never define are harness-authored
 and labelled on each route: product data, `ProductRow`, `Cart`, `Hero`, `cartUI`, `Panel`, `Airport`, `Arrow`,
 `productSchema`, the `search_products` tool and `genui_agent`. Agent-rendered UI cannot work because the .NET AG-UI
 server drops the run's context entries, which carry the catalog and the render guide (§9.11, confirmed live). The
 demos use `/api/copilotkit-genui` (and `/api/copilotkit-genui-transports` for `generativeUI: true`).
 
+- **`/generative-ui/components`.** The section's Try-it setup: the page's runtime
+  (`/api/copilotkit-components`), `Providers` with `standardUI`, and a bare `CopilotChat`. The page's TanStack
+  `BuiltInAgent` is swapped for the MAF .NET `components_agent` (same model and system prompt, no tools). Prompt:
+  `Compare the Starter, Team, and Enterprise plans in a table`. The page promises a live table; expect text today,
+  because the guide and catalog never reach the model. A `RUN_ERROR` means `/components_agent` is unreachable.
 - **`/generative-ui/components/surfaces`.** Offline check: the fallback product row (Trail Runner, City Sneaker,
   Track Spike) renders. Prompt: `Show me cheap running shoes in the featured row`. The page says the row is
   swapped; today, expect text or rejected operations.
@@ -587,9 +592,10 @@ this repo. Run it before trusting any status below.
 | [Hashbrown](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/hashbrown) | `/generative-ui/hashbrown` | ⚠️ | Same CS0117 and the same one-line remedy. Raw AG-UI run OK; not browser-checked (§9.10). |
 | [MCP Apps](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/mcp-apps) | `/generative-ui/mcp-apps` | ⚠️ | No .NET code on the page; Node BuiltInAgent runtime; needs an MCP server on :3108 and a frontend key. Not browser-checked. |
 | [Open Generative UI](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/open-generative-ui) | `/generative-ui/open-generative-ui` | ⚠️ | Both agents compile and are mapped; helpers stubbed (labelled); design skill and sandbox-function context dropped (§9.11). Not browser-checked. |
+| [Components and surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components) | `/generative-ui/components` | ❌ | TanStack BuiltInAgent swapped for MAF `components_agent`; context (guide, catalog) dropped (§9.11). |
 | [Surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/surfaces) | `/generative-ui/components/surfaces` | ❌ | Context dropped (§9.11); fallback row works offline. |
 | [Catalogs](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/catalogs) | `/generative-ui/components/catalogs` | ❌ | Context dropped; export tab works offline. |
-| [Standard catalog](https://docs.copilotkit.ai/generative-ui/components/standard-catalog) | `/generative-ui/components/standard-catalog` | ❌ | Context dropped. |
+| [Standard catalog](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/standard-catalog) | `/generative-ui/components/standard-catalog` | ❌ | Context dropped. |
 | [State and actions](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/state-and-actions) | `/generative-ui/components/state-and-actions` | ❌ | Context dropped; declarations tab works offline. |
 | [Theming](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/theming) | `/generative-ui/components/theming` | ❌ | Context dropped; nothing renders to theme. |
 | [Transports](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/transports) | `/generative-ui/components/transports` | ❌ | Context dropped. |
@@ -926,7 +932,7 @@ Turbopack's cache under `frontend/.next` grows unboundedly. Delete `frontend/.ne
 │       ├── app/
 │       │   ├── api/copilotkit/[[...slug]]/          ← the plain runtime
 │       │   ├── api/copilotkit-threads/[[...slug]]/  ← the Intelligence runtime
-│       │   ├── api/copilotkit-genui*/               ← Components and surfaces runtimes
+│       │   ├── api/copilotkit-genui*/, copilotkit-components/ ← Components and surfaces runtimes
 │       │   ├── api/copilotkit-mcp-apps/             ← MCP Apps runtime (Node BuiltInAgent)
 │       │   ├── api/copilotkit-declarative-*/, copilotkit-ogui/ ← Code-tab runtimes, verbatim
 │       │   ├── generative-ui/*/_demo-source/        ← Code-tab frontends, verbatim
@@ -982,9 +988,10 @@ re-checked against the rendered pages and Code tabs on 2026-11-05.
 - [Open Generative UI](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/open-generative-ui)
 
 **Generative UI · Components and surfaces**
+- [Components and surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components)
 - [Surfaces](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/surfaces)
 - [Catalogs](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/catalogs)
-- [Standard catalog](https://docs.copilotkit.ai/generative-ui/components/standard-catalog)
+- [Standard catalog](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/standard-catalog)
 - [State and actions](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/state-and-actions)
 - [Theming](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/theming)
 - [Transports](https://docs.copilotkit.ai/ms-agent-dotnet/generative-ui/components/transports)

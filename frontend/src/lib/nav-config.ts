@@ -264,6 +264,19 @@ export const NAV: NavGroup[] = [
     title: "Components and surfaces",
     routes: [
       {
+        path: "/generative-ui/components",
+        hasDemo: true,
+        title: "Components and surfaces",
+        docPath: "/ms-agent-dotnet/generative-ui/components",
+        summary:
+          "The Try-it setup: standardUI on the provider, the runtime adds render_ui and its guide, and the agent answers with A2UI 1.0 components.",
+        status: "broken",
+        statusNote:
+          "Runtime, provider and chat are the page's, mounted at /api/copilotkit-components. The page's TanStack BuiltInAgent is swapped for the MAF .NET components_agent (snippet's model and system prompt, no tools). render_ui reaches the model, but the guide and catalog travel as context, which the .NET server drops. Not yet checked in a browser.",
+        docGap:
+          "The page prints only a TanStack BuiltInAgent; no .NET agent is published, so a MAF agent with the snippet's prompt stands in (labelled). The page requires forwarding the run's systemPrompts (the render_ui guide); the .NET AG-UI server drops RunAgentInput.Context and the page gives no .NET code for it.",
+      },
+      {
         path: "/generative-ui/components/surfaces",
         hasDemo: true,
         title: "Surfaces",
@@ -291,13 +304,13 @@ export const NAV: NavGroup[] = [
         path: "/generative-ui/components/standard-catalog",
         hasDemo: true,
         title: "Standard catalog",
-        docPath: "/generative-ui/components/standard-catalog",
+        docPath: "/ms-agent-dotnet/generative-ui/components/standard-catalog",
         summary:
           "The 69-component standardUI, as is and with extends, omit and overrides.",
         status: "broken",
         statusNote:
           COMPONENTS_NOTE +
-          " This page lives outside the ms-agent-dotnet tree. maplibre-gl is not installed, so Map would fall back to a list.",
+          " maplibre-gl is not installed, so Map would fall back to a list.",
         docGap: COMPONENTS_CONTEXT_GAP,
       },
       {
