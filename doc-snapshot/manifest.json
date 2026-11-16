@@ -1,19 +1,19 @@
 {
   "schema": 1,
   "docsRoot": "https://docs.copilotkit.ai/ms-agent-dotnet",
-  "syncedAt": "2026-11-10T04:02:36.715Z",
+  "syncedAt": "2026-11-13T11:11:32.761Z",
   "pages": {
     "/generative-ui/components/standard-catalog": {
       "file": "generative-ui__components__standard-catalog.md",
-      "sha256": "42fd29a3daa041eb9c0c3e5c4a659989bc81272b81e2919f48edf4a4a8c2012d",
-      "bytes": 13860,
-      "lines": 181,
+      "sha256": "22931afe11151bc955fd4bf49f557f284ba74c52a5e58e863aafb9daaaee51d2",
+      "bytes": 16103,
+      "lines": 238,
       "routes": [
         "/generative-ui/components/standard-catalog"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet": {
       "file": "ms-agent-dotnet.md",
@@ -26,7 +26,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/ag-ui": {
       "file": "ms-agent-dotnet__ag-ui.md",
@@ -38,7 +38,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/auth": {
       "file": "ms-agent-dotnet__auth.md",
@@ -50,7 +50,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/copilot-runtime": {
       "file": "ms-agent-dotnet__copilot-runtime.md",
@@ -62,7 +62,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/custom-look-and-feel/headless-ui": {
       "file": "ms-agent-dotnet__custom-look-and-feel__headless-ui.md",
@@ -74,7 +74,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/custom-look-and-feel/slots": {
       "file": "ms-agent-dotnet__custom-look-and-feel__slots.md",
@@ -86,7 +86,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/frontend-tools": {
       "file": "ms-agent-dotnet__frontend-tools.md",
@@ -98,7 +98,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/generative-ui/a2ui/dynamic-schema": {
       "file": "ms-agent-dotnet__generative-ui__a2ui__dynamic-schema.md",
@@ -110,7 +110,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/generative-ui/a2ui/fixed-schema": {
       "file": "ms-agent-dotnet__generative-ui__a2ui__fixed-schema.md",
@@ -122,91 +122,91 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/catalogs": {
       "file": "ms-agent-dotnet__generative-ui__components__catalogs.md",
-      "sha256": "30b73a21e6e387ecd8cf68e3e99dfff18baeb4e8996b8ad1e5318f6c54dd50dc",
-      "bytes": 13643,
-      "lines": 304,
+      "sha256": "54129dea4caf946c06995d981c9ee80d1374e0ad6b4cc3afa5aee6706c5e80a9",
+      "bytes": 23835,
+      "lines": 520,
       "routes": [
         "/generative-ui/components/catalogs"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/from-a2ui": {
       "file": "ms-agent-dotnet__generative-ui__components__from-a2ui.md",
-      "sha256": "3569faea69270e431044f8593933d9e41ee188e74539ec8a2180adaf45d94d86",
-      "bytes": 13254,
-      "lines": 206,
+      "sha256": "0325bd3559c385bbb2f24418f73a343fbfb37164e5f3eb7427de34fe8d838649",
+      "bytes": 16704,
+      "lines": 279,
       "routes": [
         "/generative-ui/components/from-a2ui"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:37 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:33 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/markdown-mode": {
       "file": "ms-agent-dotnet__generative-ui__components__markdown-mode.md",
-      "sha256": "7cd625084bbbd404fc22d2b12c8db708de88eceecbe7c21aaeeeefcc5cc3aaca",
-      "bytes": 7441,
-      "lines": 160,
+      "sha256": "dc980feb2ff9d336122809b5c748d2ca24dd4da96148dec0f746e57f887612f7",
+      "bytes": 8750,
+      "lines": 188,
       "routes": [
         "/generative-ui/components/markdown-mode"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/state-and-actions": {
       "file": "ms-agent-dotnet__generative-ui__components__state-and-actions.md",
-      "sha256": "58cd01d15c0c6bed1b7f35a39fea1421da930682ddea5460d567c275c1f88cd4",
-      "bytes": 13961,
-      "lines": 333,
+      "sha256": "6db96664919c517164f9571d9351fa45900715275337b2e133edeadbe3ee13b1",
+      "bytes": 23524,
+      "lines": 556,
       "routes": [
         "/generative-ui/components/state-and-actions"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/surfaces": {
       "file": "ms-agent-dotnet__generative-ui__components__surfaces.md",
-      "sha256": "78882c1ba4833dfa70ee6ea88341720cb7b1f23b9d1dd5e42e1db510d5c1ef21",
-      "bytes": 8460,
-      "lines": 210,
+      "sha256": "e0912e2c1d71844221d51dab107314289737857357ab10a18639b3481ef4bea1",
+      "bytes": 21276,
+      "lines": 427,
       "routes": [
         "/generative-ui/components/surfaces"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/theming": {
       "file": "ms-agent-dotnet__generative-ui__components__theming.md",
-      "sha256": "9fd29e6c376088733371c5862401ba5faf8ed042dfd2ae15d2f70d844d316153",
-      "bytes": 4995,
-      "lines": 156,
+      "sha256": "219472f3437430b6e49fcb1968a1d52c5265015ccd42473e06a4790f8aab5d24",
+      "bytes": 6807,
+      "lines": 203,
       "routes": [
         "/generative-ui/components/theming"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/components/transports": {
       "file": "ms-agent-dotnet__generative-ui__components__transports.md",
-      "sha256": "f967529562aa456f10697a7455cb4aeaa01bc84020af54f483162b04389a0d28",
-      "bytes": 3946,
-      "lines": 106,
+      "sha256": "dd276ee969db2629335fcbfdddf2572d6d01ec8e579c4787a7f3a3b016833d54",
+      "bytes": 5163,
+      "lines": 139,
       "routes": [
         "/generative-ui/components/transports"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/hashbrown": {
       "file": "ms-agent-dotnet__generative-ui__hashbrown.md",
@@ -218,7 +218,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/json-render": {
       "file": "ms-agent-dotnet__generative-ui__json-render.md",
@@ -230,7 +230,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/mcp-apps": {
       "file": "ms-agent-dotnet__generative-ui__mcp-apps.md",
@@ -242,7 +242,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/open-generative-ui": {
       "file": "ms-agent-dotnet__generative-ui__open-generative-ui.md",
@@ -254,7 +254,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/state-rendering": {
       "file": "ms-agent-dotnet__generative-ui__state-rendering.md",
@@ -266,7 +266,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/tool-based": {
       "file": "ms-agent-dotnet__generative-ui__tool-based.md",
@@ -278,7 +278,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/generative-ui/tool-rendering": {
       "file": "ms-agent-dotnet__generative-ui__tool-rendering.md",
@@ -290,7 +290,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/headless-threads": {
       "file": "ms-agent-dotnet__headless-threads.md",
@@ -302,7 +302,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/human-in-the-loop/governed-actions": {
       "file": "ms-agent-dotnet__human-in-the-loop__governed-actions.md",
@@ -314,7 +314,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/human-in-the-loop/interrupt-flow": {
       "file": "ms-agent-dotnet__human-in-the-loop__interrupt-flow.md",
@@ -326,7 +326,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:34 GMT"
     },
     "/ms-agent-dotnet/human-in-the-loop/tool-based": {
       "file": "ms-agent-dotnet__human-in-the-loop__tool-based.md",
@@ -338,19 +338,19 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/multi-agent/subagents": {
       "file": "ms-agent-dotnet__multi-agent__subagents.md",
-      "sha256": "3b787e6dad10b0c307cf6cae58ca4fce74f1e1584c94c94ebc2cd273e7c6dad1",
-      "bytes": 36804,
-      "lines": 932,
+      "sha256": "1f568cbc03024e9474a99cdb047353b789328641371572b1cc038971995872bf",
+      "bytes": 37241,
+      "lines": 934,
       "routes": [
         "/multi-agent/subagents"
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:38 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/prebuilt-components": {
       "file": "ms-agent-dotnet__prebuilt-components.md",
@@ -362,7 +362,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/prebuilt-components/copilot-threads-drawer": {
       "file": "ms-agent-dotnet__prebuilt-components__copilot-threads-drawer.md",
@@ -374,7 +374,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/programmatic-control": {
       "file": "ms-agent-dotnet__programmatic-control.md",
@@ -386,7 +386,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/quickstart": {
       "file": "ms-agent-dotnet__quickstart.md",
@@ -398,7 +398,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/shared-state/in-app-agent-read": {
       "file": "ms-agent-dotnet__shared-state__in-app-agent-read.md",
@@ -410,7 +410,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/shared-state/in-app-agent-write": {
       "file": "ms-agent-dotnet__shared-state__in-app-agent-write.md",
@@ -422,7 +422,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/threads-lifecycle": {
       "file": "ms-agent-dotnet__threads-lifecycle.md",
@@ -434,7 +434,7 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     },
     "/ms-agent-dotnet/webmcp": {
       "file": "ms-agent-dotnet__webmcp.md",
@@ -446,11 +446,11 @@
       ],
       "status": "ok",
       "age": 0,
-      "date": "Tue, 10 Nov 2026 04:02:39 GMT"
+      "date": "Fri, 13 Nov 2026 11:11:35 GMT"
     }
   },
   "sitemap": {
-    "fetchedAt": "2026-11-10T04:02:36.715Z",
+    "fetchedAt": "2026-11-13T11:11:32.761Z",
     "urlsUnderRoot": 175,
     "knownUnmapped": [
       "https://docs.copilotkit.ai/ms-agent-dotnet/AG-UI-Streams",
@@ -492,6 +492,7 @@
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/arcade",
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/claude-managed-agents",
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/daytona",
+      "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/google-antigravity",
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/jev-generative-ui",
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/manufact",
       "https://docs.copilotkit.ai/ms-agent-dotnet/cookbook/openbox-governed-copilotkit",
