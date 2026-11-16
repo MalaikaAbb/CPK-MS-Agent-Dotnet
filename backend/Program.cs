@@ -201,6 +201,24 @@ AIAgent interruptAgent = InterruptAgent.Create(openAiApiKey);
 AIAgent genuiAgent = GenerativeUIProductsAgent.Create(openAI);
 #endregion
 
+#region components-agent
+// Generative UI › Components and surfaces (.../generative-ui/components),
+// "Add the runtime and an agent". The page prints a TanStack BuiltInAgent
+// (gpt-6-luna, one system prompt, the run's own tools and systemPrompts).
+// Harness swap (each framework runs its own agent): this MAF .NET agent with
+// the snippet's model and system prompt and no tools of its own. The chat
+// client chain is the Quickstart agent's (reasoning effort "none", §9.8).
+// The page's `...systemPrompts` (the render_ui guide) is NOT forwarded: the
+// .NET AG-UI server drops RunAgentInput.Context (README §9.11).
+var componentsAgent = openAI.GetChatClient("gpt-6-luna")
+    .AsIChatClient().AsBuilder()
+    .ConfigureOptions(options => options.RawRepresentationFactory = _ =>
+        new OpenAI.Chat.ChatCompletionOptions { ReasoningEffortLevel = new("none") })
+    .Build().AsAIAgent(
+    name: "ComponentsAgent",
+    instructions: "You are a helpful assistant. When a visual answer helps, render it with generative UI.");
+#endregion
+
 #region byoc-agents-remedy
 // JSON Render and Hashbrown: .../generative-ui/json-render and .../hashbrown.
 // The Code-tab agents fail to compile on Microsoft.Agents.AI 1.27.0 (CS0117,
@@ -240,7 +258,7 @@ app.MapGet("/health", () => Results.Ok(new
     status = "ok",
     agents = new[]
     {
-        "/", "/chart_agent", "/search_agent", "/interrupt_agent", "/genui_agent",
+        "/", "/chart_agent", "/search_agent", "/interrupt_agent", "/genui_agent", "/components_agent",
         "/open-gen-ui", "/open-gen-ui-advanced", "/byoc-json-render", "/byoc-hashbrown", "/sample_agent", "/subagents",
     },
 }));
@@ -258,6 +276,7 @@ app.MapAGUIServer("/chart_agent", Logged("/chart_agent", chartAgent));
 app.MapAGUIServer("/search_agent", Logged("/search_agent", searchAgent));
 app.MapAGUIServer("/interrupt_agent", Logged("/interrupt_agent", interruptAgent));
 app.MapAGUIServer("/genui_agent", Logged("/genui_agent", genuiAgent));
+app.MapAGUIServer("/components_agent", Logged("/components_agent", componentsAgent));
 app.MapAGUIServer("/sample_agent", Logged("/sample_agent", sharedStateAgent));
 app.MapAGUIServer("/byoc-json-render", Logged("/byoc-json-render", byocJsonRenderAgent));
 app.MapAGUIServer("/byoc-hashbrown", Logged("/byoc-hashbrown", byocHashbrownAgent));
