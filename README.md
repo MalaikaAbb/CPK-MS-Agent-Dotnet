@@ -837,6 +837,11 @@ entry carrying a secret word was sent to `/genui_agent`, and the model answered 
   `@ts-expect-error` above it).
 - **Tool Rendering / Frontend Tools Code tabs:** they import v1 `CopilotKit` from `@copilotkit/react-core` next to
   v2 hooks, and the bundled README still names `useCopilotAction`.
+- **Adopt from A2UI:** the new "Use 1.0 with the React a2ui renderer" snippets (`basicCatalogV1`,
+  `DynamicStringSchemaV1`, `createCatalog(..., { protocolVersion: "1.0" })`) are shown as text only on
+  `/generative-ui/components/from-a2ui`. `@copilotkit/a2ui-renderer` is not installed here and those exports need
+  the 1.87 line (this repo pins 1.85). The page also requires the agent to emit native 1.0 `a2ui_operations`, and
+  no .NET code for that is published.
 - **Lint:** the verbatim Code-tab routes use `@ts-ignore`, and two verbatim chart components reassign a variable
   during render. Both are flagged by `eslint` and kept as published.
 
